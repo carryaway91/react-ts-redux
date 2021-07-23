@@ -50,7 +50,7 @@ const App: React.FC = () => {
   }
 
   const renderTables = (): JSX.Element[] | undefined => {
-    return tables && tables.map(table => <TasksTable changeName={(id: number, title:string) => changeTableName(id, title)} remove={(id: number) => handleRemoveTable(id)} tableID={table.id} title={table.title} tasks={tasks}/>)
+    return tables && tables.map((table, i) => <TasksTable key={i} changeName={(id: number, title:string) => changeTableName(id, title)} remove={(id: number) => handleRemoveTable(id)} tableID={table.id} title={table.title} tasks={tasks}/>)
   }
 
   return (

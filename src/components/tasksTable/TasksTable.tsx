@@ -59,7 +59,7 @@ const TasksTable: React.FC<IProps> = ({ tableID, tasks, title, remove, changeNam
 
 
     const renderTasks = (): JSX.Element[] | undefined => {
-        return tableTasks && tableTasks.map(t => <Task data={t} remove={(id:number) => removeTask(id)}/>)
+        return tableTasks && tableTasks.map((t, i) => <Task key={i} data={t} remove={(id:number) => removeTask(id)}/>)
     }
 
     const renderTitleEdit = (): JSX.Element => {
